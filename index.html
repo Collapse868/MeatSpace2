@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🍔 MeatSpace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-hamburger"></i> MeatSpace</h1>
+        <div class="header-links">
+            <button class="head-btn" id="test" onclick="Openn()">
+                <i class="fas fa-user"></i> Войти
+            </button>
+            <button class="head-btn" onclick="Basket()">
+                <i class="fas fa-shopping-cart"></i> Корзина
+                <span id="BasketCount" class="basket-count">0</span>
+            </button>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="category-card">
+                <h2><i class="fas fa-bars"></i> Меню</h2>
+                <ul class="category-list">
+                    <li>
+                        <button class="category-btn" onclick="Category('burgers')">
+                            <i class="fas fa-hamburger"></i> Бургеры
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn" onclick="Category('drinks')">
+                            <i class="fas fa-glass-whiskey"></i> Напитки
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn" onclick="Category('desserts')">
+                            <i class="fas fa-ice-cream"></i> Десерты
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="products-section">
+            <h2 class="section-title" id="burgers">Бургеры</h2>
+            <div class="products-grid">
+                <div class="card">
+                    <img src="img/png-clipart-whopper-hamburger-cheeseburger-chicken-no-bg-preview (carve.photos).png" alt="Бургер">
+                    <h3>Воппер</h3>
+                    <p>Сочная говядина, свежие овощи</p>
+                    <div class="price">249 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Воппер', 249,'img/png-clipart-whopper-hamburger-cheeseburger-chicken-no-bg-preview (carve.photos).png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/png-clipart-chicken-sandwich-whopper-filet-o-fish--no-bg-preview (carve.photos).png" alt="Бургер">
+                    <h3>Чиккен Бургер</h3>
+                    <p>Хрустящая курочка, свежие овощи</p>
+                    <div class="price">179 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Чиккен Бургер', 179,'img/png-clipart-chicken-sandwich-whopper-filet-o-fish--no-bg-preview (carve.photos).png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/png-transparent-veggie-burger-cheeseburger-mcdonal-no-bg-preview (carve.photos).png" alt="Бургер">
+                    <h3>Вегетарианский Бургер</h3>
+                    <p>Ароматная овощная котлета, пикантный соус</p>
+                    <div class="price">189 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Вегетарианский Бургер', 189,'img/png-transparent-veggie-burger-cheeseburger-mcdonal-no-bg-preview (carve.photos).png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/png-clipart-hamburger-whopper-cheeseburger-fast-fo-no-bg-preview (carve.photos).png" alt="Бургер">
+                    <h3>Гамбургер</h3>
+                    <p>Классика: говяжья котлета, кетчуп, горчица</p>
+                    <div class="price">250 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Гамбургер', 250,'img/png-clipart-hamburger-whopper-cheeseburger-fast-fo-no-bg-preview (carve.photos).png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/crispy-chicken-burger-isolation-on-600nw-262664219-no-bg-preview (carve.photos).png" alt="Бургер">
+                    <h3>Биг Чикен Бургер</h3>
+                    <p>Двойная курочка, двойной вкус</p>
+                    <div class="price">239 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Биг Чикен Бургер', 239,'img/crispy-chicken-burger-isolation-on-600nw-262664219-no-bg-preview (carve.photos).png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/403008245-dvojnoj-vopper-gril-xxl-600x600.png" alt="Бургер">
+                    <h3>Двойной Воппер</h3>
+                    <p>Две говяжьи котлеты, максимум сока</p>
+                    <div class="price">329 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Двойной Воппер', 329,'img/403008245-dvojnoj-vopper-gril-xxl-600x600.png')">Заказать</button>
+                </div>
+            </div>
+            <h2 class="section-title" id="drinks">Напитки</h2>
+            <div class="products-grid">
+                <div class="card">
+                    <img src="img/657e511d1692e8232f1c81498a4826a3_wsv7lpzrkje.png" alt="Спрайт">
+                    <h3>Добрый Спрайт</h3>
+                    <p>Искрящийся лимон-лайм </p>
+                    <div class="price">119 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Добрый Спрайт', 119,'img/657e511d1692e8232f1c81498a4826a3_wsv7lpzrkje.png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/07d292f70383eabba5c27a59ac734b67_991zhnztfnk (1).png" alt="Кола">
+                    <h3>Добрый Кола</h3>
+                    <p>Классическая газированная доброта</p>
+                    <div class="price">119 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Добрый Кола', 119,'img/07d292f70383eabba5c27a59ac734b67_991zhnztfnk (1).png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/dc3bead319c635e020ecba012fe00372_nwtgurylu2m.png" alt="Фанта">
+                    <h3>Добрый Фанта</h3>
+                    <p>Взрыв апельсинового настроения</p>
+                    <div class="price">119 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Добрый Фанта', 119,'img/dc3bead319c635e020ecba012fe00372_nwtgurylu2m.png')">Заказать</button>
+                </div>
+            </div>    
+            <h2 class="section-title" id="desserts">Десерты</h2>
+            <div class="products-grid">
+                <div class="card">
+                    <img src="img/45f1780beb7c0e64481e85f765119708.png" alt="Горячий Брауни">
+                    <h3>Горячий Брауни</h3>
+                    <p>Тёплый шоколадный восторг</p>
+                    <div class="price">259 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Горячий Брауни', 259,'img/45f1780beb7c0e64481e85f765119708.png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/426fd0747daf0337a995e6248f23bbfc---png_1000x_103c0_convert.png" alt="Пирожок с вишней">
+                    <h3>Пирожок с вишней</h3>
+                    <p>Сочная вишня в нежном тесте</p>
+                    <div class="price">149 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Пирожок с вишней', 149,'img/426fd0747daf0337a995e6248f23bbfc---png_1000x_103c0_convert.png')">Заказать</button>
+                </div>
+                <div class="card">
+                    <img src="img/images.png" alt="Сандэй клубничный">
+                    <h3>Сандэй клубничный</h3>
+                    <p>Мороженое, клубника и сладкий восторг</p>
+                    <div class="price">229 ₽</div>
+                    <button class="basket-go" onclick="addToBasket('Сандэй клубничный', 229,'img/images.png')">Заказать</button>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <div id="loginDropdown" class="dropdown-content">
+        <button class="close-dropdown" id="Closer" onclick="closeform()">×</button>
+        <form class="dropdown-form" onsubmit="proverka(event)">
+            <h1>Авторизация</h1>
+            <div class="input-box">
+                <input id="loginInput" type="text" placeholder="login" required>
+                <i class="fas fa-user"></i>       
+            </div>
+            <div class="input-box">
+                <input id="passwordInput" type="password" placeholder="password" required>
+                <i class="fas fa-lock"></i>       
+            </div>
+            <div class="remember">
+                <label><input type="checkbox">Запомни меня</label>
+                <a href="#">Забыл логин или пароль?</a>
+            </div>
+            <button type="submit" class="btn">Войти</button>
+            <button type="button" onclick="reg()" class="btn" style="margin-top: 10px; background-color: #28a745;">Регистрация</button>
+            <div class="register-link">
+                <p>Нет аккаунта? <a href="#" onclick="reg(); event.preventDefault();">Зарегистрироваться</a></p>
+            </div>
+        </form>
+    </div>
+    <div id="basketModal" class="basket-modal">
+        <div class="basket-modal-content">
+            <div class="basket-header">
+                <h2><i class="fas fa-shopping-cart"></i>Ваш заказ</h2>
+                <button class="close-btn" onclick="closebasket()">x</button>
+            </div>
+            <div id="basketItems" class="basket-items">
+                <div class="empty-basket">
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Корзина пуста</p>
+                </div>
+            </div>
+            <div class="basket-footer">
+                <div class="basket-total">
+                    <span>Итого:</span>
+                    <span id="basketTotalPrice">0 ₽</span>
+                </div>
+                <button class="zakaz-btn" onclick="zakaz()">
+                    <i class="fas fa-credit-card"></i> Оформить заказ
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
